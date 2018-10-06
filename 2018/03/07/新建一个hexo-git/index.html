@@ -1,919 +1,751 @@
 <!DOCTYPE html>
+<html lang="zh-Hans">
+    <!-- title -->
 
 
 
 
-<html class="theme-next mist" lang="zh-Hans">
+<!-- keywords -->
+
+
+
+
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-  
-  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="FTH">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="FTH">
     
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="hexo," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="&amp;#x6B22;&amp;#x8FCE;&amp;#x6765;&amp;#x5230;&amp;#x6211;&amp;#x7684;&amp;#x4E2A;&amp;#x4EBA;&amp;#x535A;&amp;#x5BA2;&amp;#x8FD9;&amp;#x662F;&amp;#x6211;&amp;#x7B2C;&amp;#x4E00;&amp;#x6B21;&amp;#x4F7F;&amp;#x7528;hexo+git&amp;#x7684;&amp;#x65B9;&amp;#x5F0F;&amp;#x53BB;&amp;#x521B;&amp;#x5EFA;">
-<meta name="keywords" content="hexo">
-<meta property="og:type" content="article">
-<meta property="og:title" content="新建一个hexo+git">
-<meta property="og:url" content="https://f5cc.cc/2018/03/07/新建一个hexo-git/index.html">
-<meta property="og:site_name" content="Faith豌豆符的技术小站">
-<meta property="og:description" content="&amp;#x6B22;&amp;#x8FCE;&amp;#x6765;&amp;#x5230;&amp;#x6211;&amp;#x7684;&amp;#x4E2A;&amp;#x4EBA;&amp;#x535A;&amp;#x5BA2;&amp;#x8FD9;&amp;#x662F;&amp;#x6211;&amp;#x7B2C;&amp;#x4E00;&amp;#x6B21;&amp;#x4F7F;&amp;#x7528;hexo+git&amp;#x7684;&amp;#x65B9;&amp;#x5F0F;&amp;#x53BB;&amp;#x521B;&amp;#x5EFA;">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-22T11:11:06.880Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="新建一个hexo+git">
-<meta name="twitter:description" content="&amp;#x6B22;&amp;#x8FCE;&amp;#x6765;&amp;#x5230;&amp;#x6211;&amp;#x7684;&amp;#x4E2A;&amp;#x4EBA;&amp;#x535A;&amp;#x5BA2;&amp;#x8FD9;&amp;#x662F;&amp;#x6211;&amp;#x7B2C;&amp;#x4E00;&amp;#x6B21;&amp;#x4F7F;&amp;#x7528;hexo+git&amp;#x7684;&amp;#x65B9;&amp;#x5F0F;&amp;#x53BB;&amp;#x521B;&amp;#x5EFA;">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新建一个hexo+git · Faith&#39;s Studio</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
     }
-  };
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
 </script>
 
-
-
-  <link rel="canonical" href="https://f5cc.cc/2018/03/07/新建一个hexo-git/"/>
-
-
-
-
-
-  <title>新建一个hexo+git | Faith豌豆符的技术小站</title>
-  
-
-
-
-
-
-
-
-
+    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
     
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+        <body class="post-body">
     
+    
+<header class="header">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Faith豌豆符的技术小站</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >fi3ework&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">新建一个hexo+git</a>
+            </div>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
+    
+    <a class="home-link" href=/>fi3ework's Studio.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            新建一个hexo+git
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "hexo">hexo</a>
+    
 </div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-hexo" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://f5cc.cc/2018/03/07/新建一个hexo-git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FTH">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Faith豌豆符的技术小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">新建一个hexo+git</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T12:51:43+08:00">
-                2018-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
                 
                 
-              
-            </span>
-          
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">491</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/03/07</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
 
-          
-            
-          
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
 
-          
-          
-             <span id="/2018/03/07/新建一个hexo-git/" class="leancloud_visitors" data-flag-title="新建一个hexo+git">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
 
-          
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
 
-          
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
 
-          
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
 
-        </div>
-      </header>
-    
+      async(arr[0], success, currReject)
+  }
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h1 id="&#x6B22;&#x8FCE;&#x6765;&#x5230;&#x6211;&#x7684;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;"><a href="#&#x6B22;&#x8FCE;&#x6765;&#x5230;&#x6211;&#x7684;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;" class="headerlink" title="&#x6B22;&#x8FCE;&#x6765;&#x5230;&#x6211;&#x7684;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;"></a>&#x6B22;&#x8FCE;&#x6765;&#x5230;&#x6211;&#x7684;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;</h1><p>&#x8FD9;&#x662F;&#x6211;&#x7B2C;&#x4E00;&#x6B21;&#x4F7F;&#x7528;hexo+git&#x7684;&#x65B9;&#x5F0F;&#x53BB;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E2A;&#x4EBA;&#x7684;&#x535A;&#x5BA2;&#xFF0C;&#x4E4B;&#x524D;&#x4ECE;&#x672A;&#x6DF1;&#x5165;git&#x548C;markdown&#x8FD9;&#x4E9B;&#x8F6F;&#x4EF6;&#x548C;&#x5199;&#x6587;&#x7AE0;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x4E3B;&#x8981;&#x8BB2;&#x8FF0;&#x4ECE;&#x96F6;&#x5230;&#x9010;&#x6B65;&#x5B8C;&#x5584;&#x6211;&#x7684;hexo+next&#x4E3B;&#x9898;&#x7684;&#x535A;&#x5BA2;&#x4E4B;&#x65C5;&#xFF0C;&#x65E5;&#x540E;&#x518D;&#x5EFA;&#x80FD;&#x591F;&#x6709;&#x6240;&#x5E2E;&#x52A9;&#x3002;<br>&#x56E0;&#x4E3A;&#x662F;&#x7B2C;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x5C31;&#x591A;&#x8BF4;&#x70B9;&#xFF0C;&#x9996;&#x5148;&#x6700;&#x5F00;&#x5FC3;&#x7684;&#x5C31;&#x662F;&#x57DF;&#x540D;&#x4E86;&#xFF01;<br><strong>f5cc.cc</strong>&#xFF0C;&#x5728;<a href="https://sg.godaddy.com" target="_blank" rel="noopener">GoDaddy</a> &#x1F4B0;32 &#xFF0C;&#x57DF;&#x540D;&#x672C;&#x8EAB;&#x5E76;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x542B;&#x4E49;&#x53EA;&#x662F;&#x77ED;&#x548C;&#x597D;&#x8BB0;&#x7F62;&#x4E86;</p>
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1>&#x6B22;&#x8FCE;&#x6765;&#x5230;&#x6211;&#x7684;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;</h1>
+<p>&#x8FD9;&#x662F;&#x6211;&#x7B2C;&#x4E00;&#x6B21;&#x4F7F;&#x7528;hexo+git&#x7684;&#x65B9;&#x5F0F;&#x53BB;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E2A;&#x4EBA;&#x7684;&#x535A;&#x5BA2;&#xFF0C;&#x4E4B;&#x524D;&#x4ECE;&#x672A;&#x6DF1;&#x5165;git&#x548C;markdown&#x8FD9;&#x4E9B;&#x8F6F;&#x4EF6;&#x548C;&#x5199;&#x6587;&#x7AE0;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x4E3B;&#x8981;&#x8BB2;&#x8FF0;&#x4ECE;&#x96F6;&#x5230;&#x9010;&#x6B65;&#x5B8C;&#x5584;&#x6211;&#x7684;hexo+next&#x4E3B;&#x9898;&#x7684;&#x535A;&#x5BA2;&#x4E4B;&#x65C5;&#xFF0C;&#x65E5;&#x540E;&#x518D;&#x5EFA;&#x80FD;&#x591F;&#x6709;&#x6240;&#x5E2E;&#x52A9;&#x3002;
+&#x56E0;&#x4E3A;&#x662F;&#x7B2C;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x5C31;&#x591A;&#x8BF4;&#x70B9;&#xFF0C;&#x9996;&#x5148;&#x6700;&#x5F00;&#x5FC3;&#x7684;&#x5C31;&#x662F;&#x57DF;&#x540D;&#x4E86;&#xFF01;
+<strong>f5cc.cc</strong>&#xFF0C;&#x5728;<a href="https://sg.godaddy.com" target="_blank" rel="noopener">GoDaddy</a> &#x1F4B0;32 &#xFF0C;&#x57DF;&#x540D;&#x672C;&#x8EAB;&#x5E76;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x542B;&#x4E49;&#x53EA;&#x662F;&#x77ED;&#x548C;&#x597D;&#x8BB0;&#x7F62;&#x4E86;</p>
 <hr>
-<h1 id="&#x642D;&#x5EFA;"><a href="#&#x642D;&#x5EFA;" class="headerlink" title="&#x642D;&#x5EFA;"></a>&#x642D;&#x5EFA;</h1><p>&#x53EA;&#x8981;&#x767E;&#x5EA6;&#x4E00;&#x4E0B;hexo+git&#x5173;&#x952E;&#x8BCD;&#xFF0C;&#x5C31;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x6709;&#x4E86;&#xFF0C;&#x8FD8;&#x6709;&#x90A3;&#x79CD;&#x4EC0;&#x4E48;&#x5927;&#x91CF;&#x4F18;&#x5316;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x4E5F;&#x6CA1;&#x5FC5;&#x8981;&#x5F04;&#x5F97;&#x90A3;&#x4E48;&#x7CBE;&#x81F4;&#xFF0C;&#x6BD5;&#x7ADF;&#x53EA;&#x662F;&#x4E2A;&#x8BB0;&#x5F55;&#x7684;&#x5DE5;&#x5177;&#x3002;<br>&#x4F46;&#x662F;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x4E00;&#x4E9B;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x7248;&#x672C;&#x4E0D;&#x5BF9;&#x4E0B;&#x9762;&#x6211;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;</p>
-<h2 id="next&#x4E3B;&#x9898;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;menu&#x83DC;&#x5355;&#x533A;&#x522B;"><a href="#next&#x4E3B;&#x9898;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;menu&#x83DC;&#x5355;&#x533A;&#x522B;" class="headerlink" title="next&#x4E3B;&#x9898;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;menu&#x83DC;&#x5355;&#x533A;&#x522B;"></a>next&#x4E3B;&#x9898;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;menu&#x83DC;&#x5355;&#x533A;&#x522B;</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home #&#x9996;&#x9875;</span><br><span class="line">  #about: /about/ || user</span><br><span class="line">  tags: /tags/ || tags #&#x6807;&#x7B7E;</span><br><span class="line">  categories: /categories || th #&#x5206;&#x7C7B;</span><br><span class="line">  archives: /archives/ || archive #&#x5F52;&#x6863;</span><br></pre></td></tr></table></figure>
+<h1>&#x642D;&#x5EFA;</h1>
+<p>&#x53EA;&#x8981;&#x767E;&#x5EA6;&#x4E00;&#x4E0B;hexo+git&#x5173;&#x952E;&#x8BCD;&#xFF0C;&#x5C31;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x6709;&#x4E86;&#xFF0C;&#x8FD8;&#x6709;&#x90A3;&#x79CD;&#x4EC0;&#x4E48;&#x5927;&#x91CF;&#x4F18;&#x5316;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x4E5F;&#x6CA1;&#x5FC5;&#x8981;&#x5F04;&#x5F97;&#x90A3;&#x4E48;&#x7CBE;&#x81F4;&#xFF0C;&#x6BD5;&#x7ADF;&#x53EA;&#x662F;&#x4E2A;&#x8BB0;&#x5F55;&#x7684;&#x5DE5;&#x5177;&#x3002;
+&#x4F46;&#x662F;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x4E00;&#x4E9B;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x7248;&#x672C;&#x4E0D;&#x5BF9;&#x4E0B;&#x9762;&#x6211;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;</p>
+<h2>next&#x4E3B;&#x9898;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;menu&#x83DC;&#x5355;&#x533A;&#x522B;</h2>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home #&#x9996;&#x9875;</span><br><span class="line">  #about: /about/ || user</span><br><span class="line">  tags: /tags/ || tags #&#x6807;&#x7B7E;</span><br><span class="line">  categories: /categories || th #&#x5206;&#x7C7B;</span><br><span class="line">  archives: /archives/ || archive #&#x5F52;&#x6863;</span><br></pre></td></tr></table></figure></p>
 <p>&#x4E0A;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x6211;&#x8FD9;&#x4E2A;&#x7248;&#x672C;&#x7684;&#x4E00;&#x4E2A;&#x5F00;&#x542F;nav&#x7684;&#x914D;&#x7F6E;&#x4EE3;&#x7801;&#xFF0C;&#x767E;&#x5EA6;&#x4E0A;&#x7684;&#x5C31;&#x4E0D;&#x4F1A;&#x6709;||&#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x4E86;&#xFF0C;||&#x4E4B;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x4E3B;&#x8981;&#x7528;&#x6765;&#x663E;&#x793A;&#x56FE;&#x6807;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5220;&#x9664;&#x4E86;&#x5C31;&#x7F3A;&#x5931;&#x56FE;&#x6807;&#x4E86;&#x3002;</p>
-<h2 id="&#x1F92F;&#x8868;&#x60C5;&#x5305;"><a href="#&#x1F92F;&#x8868;&#x60C5;&#x5305;" class="headerlink" title="&#x1F92F;&#x8868;&#x60C5;&#x5305;"></a>&#x1F92F;&#x8868;&#x60C5;&#x5305;</h2><p>&#x8868;&#x60C5;&#x5305;&#x6211;&#x771F;&#x662F;&#x82B1;&#x8D39;&#x4E86;&#x597D;&#x591A;&#x65F6;&#x95F4;&#xFF0C;hexo&#x5B98;&#x7F51;&#x8BF4;&#x652F;&#x6301;</p>
+<h2>&#x1F92F;&#x8868;&#x60C5;&#x5305;</h2>
+<p>&#x8868;&#x60C5;&#x5305;&#x6211;&#x771F;&#x662F;&#x82B1;&#x8D39;&#x4E86;&#x597D;&#x591A;&#x65F6;&#x95F4;&#xFF0C;hexo&#x5B98;&#x7F51;&#x8BF4;&#x652F;&#x6301;</p>
 <blockquote>
 <p><strong>Markdown Support:</strong> <strong>All</strong> features of GitHub Flavored Markdown are <strong>supported</strong>. You can even use most Octopress plugins in Hexo.</p>
 </blockquote>
-<p>&#x8BD5;&#x4E86;&#x5F88;&#x4E45;&#x90FD;&#x4E0D;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x53BB;&#x95EE;qq&#x7FA4;&#x91CC;&#x9762;&#x7684;&#x5927;&#x795E;&#x4EEC;&#xFF0C;&#x7ED9;&#x6211;&#x4E86;&#x4E00;&#x4E9B;&#x63D2;&#x4EF6;&#x53BB;&#x5B89;&#x88C5;&#xFF0C;&#x8868;&#x60C5;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x90FD;&#x662F;&#x56FE;&#x7247;&#x683C;&#x5F0F;&#x8FD8;&#x80FD;&#x653E;&#x5927;&#x3002;&#x3002;<br>&#x9644;&#x4E0A;QQ&#x7FA4;&#x53F7; <strong>287306637</strong><br> &#x6F5C;&#x6C34;&#x9171;&#x6CB9;&#x5F88;&#x591A;&#x725B;&#x4EBA;&#x4E5F;&#x591A;&#x7684;&#x975E;&#x5E38;&#x70ED;&#x95F9;&#x7684;&#x7FA4;</p>
-<p>&#x6700;&#x540E;&#x9644;&#x4E0A;&#x6211;&#x7684;<strong>&#x89E3;&#x51B3;&#x65B9;&#x6848;</strong><br>&#x1F602;&#x5C31;&#x662F;&#x8FD9;&#x4E2A; <strong><a href="https://emojipedia.org/" title="emjoy" target="_blank" rel="noopener">emojipedia</a></strong><br>&#x76F4;&#x63A5;&#x7528;&#x6765;&#x590D;&#x5236;&#x7C98;&#x8D34;&#xFF0C;&#x8F7B;&#x677E;&#x4FBF;&#x6377;&#xFF0C;&#x65E0;&#x9700;&#x4EFB;&#x4F55;&#x63D2;&#x4EF6;&#x3002;</p>
+<p>&#x8BD5;&#x4E86;&#x5F88;&#x4E45;&#x90FD;&#x4E0D;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x53BB;&#x95EE;qq&#x7FA4;&#x91CC;&#x9762;&#x7684;&#x5927;&#x795E;&#x4EEC;&#xFF0C;&#x7ED9;&#x6211;&#x4E86;&#x4E00;&#x4E9B;&#x63D2;&#x4EF6;&#x53BB;&#x5B89;&#x88C5;&#xFF0C;&#x8868;&#x60C5;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x90FD;&#x662F;&#x56FE;&#x7247;&#x683C;&#x5F0F;&#x8FD8;&#x80FD;&#x653E;&#x5927;&#x3002;&#x3002;
+&#x9644;&#x4E0A;QQ&#x7FA4;&#x53F7; <strong>287306637</strong><br>
+&#x6F5C;&#x6C34;&#x9171;&#x6CB9;&#x5F88;&#x591A;&#x725B;&#x4EBA;&#x4E5F;&#x591A;&#x7684;&#x975E;&#x5E38;&#x70ED;&#x95F9;&#x7684;&#x7FA4;</p>
+<p>&#x6700;&#x540E;&#x9644;&#x4E0A;&#x6211;&#x7684;<strong>&#x89E3;&#x51B3;&#x65B9;&#x6848;</strong>
+&#x1F602;&#x5C31;&#x662F;&#x8FD9;&#x4E2A; <strong><a href="https://emojipedia.org/" title="emjoy" target="_blank" rel="noopener">emojipedia</a></strong>
+&#x76F4;&#x63A5;&#x7528;&#x6765;&#x590D;&#x5236;&#x7C98;&#x8D34;&#xFF0C;&#x8F7B;&#x677E;&#x4FBF;&#x6377;&#xFF0C;&#x65E0;&#x9700;&#x4EFB;&#x4F55;&#x63D2;&#x4EF6;&#x3002;</p>
 
-      
-    </div>
+    </article>
+    <!-- license  -->
     
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
-          
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://f5cc.cc">FTH</a>
+            <p>原文链接：<a href="https://f5cc.cc/2018/03/07/新建一个hexo-git/">https://f5cc.cc/2018/03/07/新建一个hexo-git/</a>
+            <p>发表日期：<a href="https://f5cc.cc/2018/03/07/新建一个hexo-git/">March 7th 2018, 12:51:43 pm</a>
+            <p>更新日期：<a href="https://f5cc.cc/2018/03/07/新建一个hexo-git/">March 22nd 2018, 7:11:06 pm</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
             
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2018/04/02/vue2-0-key-虚拟dom更新-Diff算法/" title= "vue2.0 key 虚拟dom更新 Diff算法">
+                    <div class="nextTitle">vue2.0 key 虚拟dom更新 Diff算法</div>
+                </a>
             
-              <a href="/2018/04/02/vue2-0-key-虚拟dom更新-Diff算法/" rel="prev" title="vue2.0 key 虚拟dom更新 Diff算法">
-                vue2.0 key 虚拟dom更新 Diff算法 <i class="fa fa-chevron-right"></i>
-              </a>
+        </li>
+        <li class="previous">
             
-          </div>
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
         </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDYyOS8xMTE2Nw=="></div>
-    </div>
-
-  
-
-
-
-        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    
+        
+            
+                <a href="mailto:641084662@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/fi3ework" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png" />
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">欢迎来到我的个人博客</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">next主题配置文件，menu菜单区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">🤯表情包</span></a></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 5
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/04</span><a class="archive-post-title" href= "/2018/08/04/打造完美自用Ubuntu-18-04-开发环境，解决qq微信网易云/" >打造完美自用Ubuntu 18.04 开发环境，解决qq微信网易云</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/02</span><a class="archive-post-title" href= "/2018/05/02/vue进度/" >vue进度</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span><a class="archive-post-title" href= "/2018/04/23/对于git的理解与总结/" >对于git的理解与总结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/02</span><a class="archive-post-title" href= "/2018/04/02/vue2-0-key-虚拟dom更新-Diff算法/" >vue2.0 key 虚拟dom更新 Diff算法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span><a class="archive-post-title" href= "/2018/03/07/新建一个hexo-git/" >新建一个hexo+git</a>
+        </li>
+    
     </div>
   </div>
-
-  <aside id="sidebar" class="sidebar">
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
     
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">FTH</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/FaithGit" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:641084662@qq.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                推荐阅读
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.uisdc.com/" title="优设" target="_blank">优设</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#欢迎来到我的个人博客"><span class="nav-number">1.</span> <span class="nav-text">欢迎来到我的个人博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建"><span class="nav-number">2.</span> <span class="nav-text">搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#next主题配置文件，menu菜单区别"><span class="nav-number">2.1.</span> <span class="nav-text">next主题配置文件，menu菜单区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#🤯表情包"><span class="nav-number">2.2.</span> <span class="nav-text">🤯表情包</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
+        <span class="sidebar-tag-name" data-tags="Vue"><span class="iconfont-archer">&#xe606;</span>Vue</span>
+    
+        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
+    
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
     </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-foursquare"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Powered By - Faith</span>
-
-  
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
 </div>
-
-
-  <div class="powered-by">个人博客</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">站点 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
+        <span class="sidebar-category-name" data-categories="Vue"><span class="iconfont-archer">&#xe60a;</span>Vue</span>
     
-
+        <span class="sidebar-category-name" data-categories="git"><span class="iconfont-archer">&#xe60a;</span>git</span>
     
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+        <span class="sidebar-category-name" data-categories="hexo"><span class="iconfont-archer">&#xe60a;</span>hexo</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "FTH"
+    }
 </script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
     <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("49PVedBTaBd30D6jQYcOG8Dh-gzGzoHsz", "OnkKmzKBlUnH8MBxHWQexafB");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
         }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-</body>
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
 </html>
+
+

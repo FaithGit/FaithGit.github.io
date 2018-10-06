@@ -1,928 +1,757 @@
 <!DOCTYPE html>
+<html lang="zh-Hans">
+    <!-- title -->
 
 
 
 
-<html class="theme-next mist" lang="zh-Hans">
+<!-- keywords -->
+
+
+
+
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-  
-  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="FTH">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="FTH">
     
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Vue," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="&amp;#x8D77;&amp;#x6B65;&amp;#x2714;&amp;#xFE0F;1. &amp;#x624E;&amp;#x5B9E;&amp;#x7684; JavaScript / HTML / CSS &amp;#x57FA;&amp;#x672C;&amp;#x529F;&amp;#x3002;&amp;#x8FD9;&amp;#x662F;&amp;#x524D;&amp;#x7F6E;&amp;#x6761;&amp;#x4EF6;&amp;#x3002; &amp;#x2714;&amp;#xFE0F;2. &amp;#x901A;">
-<meta name="keywords" content="Vue">
-<meta property="og:type" content="article">
-<meta property="og:title" content="vue进度">
-<meta property="og:url" content="https://f5cc.cc/2018/05/02/vue进度/index.html">
-<meta property="og:site_name" content="Faith豌豆符的技术小站">
-<meta property="og:description" content="&amp;#x8D77;&amp;#x6B65;&amp;#x2714;&amp;#xFE0F;1. &amp;#x624E;&amp;#x5B9E;&amp;#x7684; JavaScript / HTML / CSS &amp;#x57FA;&amp;#x672C;&amp;#x529F;&amp;#x3002;&amp;#x8FD9;&amp;#x662F;&amp;#x524D;&amp;#x7F6E;&amp;#x6761;&amp;#x4EF6;&amp;#x3002; &amp;#x2714;&amp;#xFE0F;2. &amp;#x901A;">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-02T03:17:27.105Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue进度">
-<meta name="twitter:description" content="&amp;#x8D77;&amp;#x6B65;&amp;#x2714;&amp;#xFE0F;1. &amp;#x624E;&amp;#x5B9E;&amp;#x7684; JavaScript / HTML / CSS &amp;#x57FA;&amp;#x672C;&amp;#x529F;&amp;#x3002;&amp;#x8FD9;&amp;#x662F;&amp;#x524D;&amp;#x7F6E;&amp;#x6761;&amp;#x4EF6;&amp;#x3002; &amp;#x2714;&amp;#xFE0F;2. &amp;#x901A;">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>vue进度 · Faith&#39;s Studio</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
     }
-  };
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
 </script>
 
-
-
-  <link rel="canonical" href="https://f5cc.cc/2018/05/02/vue进度/"/>
-
-
-
-
-
-  <title>vue进度 | Faith豌豆符的技术小站</title>
-  
-
-
-
-
-
-
-
-
+    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
     
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+        <body class="post-body">
     
+    
+<header class="header">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Faith豌豆符的技术小站</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >fi3ework&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">vue进度</a>
+            </div>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
+    
+    <a class="home-link" href=/>fi3ework's Studio.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            vue进度
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Vue">Vue</a>
+    
 </div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-Vue" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://f5cc.cc/2018/05/02/vue进度/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FTH">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Faith豌豆符的技术小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">vue进度</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T10:06:46+08:00">
-                2018-05-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
-                  </a>
-                </span>
-
                 
                 
-              
-            </span>
-          
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.2k</span>阅读时长: <span class="post-count reading-time">7 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/05/02</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
 
-          
-            
-          
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
 
-          
-          
-             <span id="/2018/05/02/vue进度/" class="leancloud_visitors" data-flag-title="vue进度">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
 
-          
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
 
-          
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
 
-          
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
 
-        </div>
-      </header>
-    
+      async(arr[0], success, currReject)
+  }
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h3 id="&#x8D77;&#x6B65;"><a href="#&#x8D77;&#x6B65;" class="headerlink" title="&#x8D77;&#x6B65;"></a>&#x8D77;&#x6B65;</h3><p>&#x2714;&#xFE0F;1. &#x624E;&#x5B9E;&#x7684; JavaScript / HTML / CSS &#x57FA;&#x672C;&#x529F;&#x3002;&#x8FD9;&#x662F;&#x524D;&#x7F6E;&#x6761;&#x4EF6;&#x3002;</p>
-<p>&#x2714;&#xFE0F;2. &#x901A;&#x8BFB;&#x5B98;&#x65B9;&#x6559;&#x7A0B; (guide) &#x7684;&#x57FA;&#x7840;&#x7BC7;&#x3002;&#x4E0D;&#x8981;&#x7528;&#x4EFB;&#x4F55;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#xFF0C;&#x5C31;&#x53EA;&#x7528;&#x6700;&#x7B80;&#x5355;&#x7684; script&#xFF0C;&#x628A;&#x6559;&#x7A0B;&#x91CC;&#x7684;&#x4F8B;&#x5B50;&#x6A21;&#x4EFF;&#x4E00;&#x904D;&#xFF0C;&#x7406;&#x89E3;&#x7528;&#x6CD5;&#x3002;&#x4E0D;&#x63A8;&#x8350;&#x4E0A;&#x6765;&#x5C31;&#x76F4;&#x63A5;&#x7528; vue-cli &#x6784;&#x5EFA;&#x9879;&#x76EE;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5982;&#x679C;&#x6CA1;&#x6709; Node/Webpack &#x57FA;&#x7840;&#x3002;</p>
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h3>&#x8D77;&#x6B65;</h3>
+<p>&#x2714;&#xFE0F;1. &#x624E;&#x5B9E;&#x7684; JavaScript / HTML / CSS &#x57FA;&#x672C;&#x529F;&#x3002;&#x8FD9;&#x662F;&#x524D;&#x7F6E;&#x6761;&#x4EF6;&#x3002;</p>
+<p>&#x2714;&#xFE0F;2. &#x901A;&#x8BFB;&#x5B98;&#x65B9;&#x6559;&#x7A0B; (guide) &#x7684;&#x57FA;&#x7840;&#x7BC7;&#x3002;&#x4E0D;&#x8981;&#x7528;&#x4EFB;&#x4F55;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#xFF0C;&#x5C31;&#x53EA;&#x7528;&#x6700;&#x7B80;&#x5355;&#x7684;script&#xFF0C;&#x628A;&#x6559;&#x7A0B;&#x91CC;&#x7684;&#x4F8B;&#x5B50;&#x6A21;&#x4EFF;&#x4E00;&#x904D;&#xFF0C;&#x7406;&#x89E3;&#x7528;&#x6CD5;&#x3002;&#x4E0D;&#x63A8;&#x8350;&#x4E0A;&#x6765;&#x5C31;&#x76F4;&#x63A5;&#x7528; vue-cli &#x6784;&#x5EFA;&#x9879;&#x76EE;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5982;&#x679C;&#x6CA1;&#x6709; Node/Webpack &#x57FA;&#x7840;&#x3002;</p>
 <p>&#x2714;&#xFE0F;3. &#x7167;&#x7740;&#x5B98;&#x7F51;&#x4E0A;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x81EA;&#x5DF1;&#x60F3;&#x4E00;&#x4E9B;&#x7C7B;&#x4F3C;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x6A21;&#x4EFF;&#x7740;&#x5B9E;&#x73B0;&#x6765;&#x7EC3;&#x624B;&#xFF0C;&#x52A0;&#x6DF1;&#x7406;&#x89E3;&#x3002;</p>
 <p>&#x2714;&#xFE0F;4. &#x9605;&#x8BFB;&#x5B98;&#x65B9;&#x6559;&#x7A0B;&#x8FDB;&#x9636;&#x7BC7;&#x7684;&#x524D;&#x534A;&#x90E8;&#x5206;&#xFF0C;&#x5230;&#x300E;&#x81EA;&#x5B9A;&#x4E49;&#x6307;&#x4EE4; (Custom Directive) &#x300F;&#x4E3A;&#x6B62;&#x3002;&#x7740;&#x91CD;&#x7406;&#x89E3; Vue &#x7684;&#x54CD;&#x5E94;&#x5F0F;&#x673A;&#x5236;&#x548C;&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x3002;&#x300E;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#xFF08;Render Function)&#x300F;&#x5982;&#x679C;&#x7406;&#x89E3;&#x5403;&#x529B;&#x53EF;&#x4EE5;&#x5148;&#x8DF3;&#x8FC7;&#x3002;</p>
 <p>&#x2714;&#xFE0F;5. &#x9605;&#x8BFB;&#x6559;&#x7A0B;&#x91CC;&#x5173;&#x4E8E;&#x8DEF;&#x7531;&#x548C;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x7684;&#x7AE0;&#x8282;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x9700;&#x8981;&#x5B66;&#x4E60; vue-router &#x548C; vuex&#x3002;&#x540C;&#x6837;&#x7684;&#xFF0C;&#x5148;&#x4E0D;&#x8981;&#x7BA1;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#xFF0C;&#x4EE5;&#x8DDF;&#x7740;&#x6587;&#x6863;&#x91CC;&#x7684;&#x4F8B;&#x5B50;&#x7406;&#x89E3;&#x7528;&#x6CD5;&#x4E3A;&#x4E3B;&#x3002;</p>
 <p>&#x2716;&#xFE0F;6. &#x8D70;&#x5B8C;&#x57FA;&#x7840;&#x6587;&#x6863;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5BF9;&#x4E8E;&#x57FA;&#x4E8E; Node &#x7684;&#x524D;&#x7AEF;&#x5DE5;&#x7A0B;&#x5316;&#x4E0D;&#x719F;&#x6089;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x8865;&#x8BFE;&#x4E86;&#x3002;&#x4E0B;&#x9762;&#x8FD9;&#x4E9B;&#x4E25;&#x683C;&#x6765;&#x8BF4;&#x5E76;&#x4E0D;&#x662F; Vue &#x672C;&#x8EAB;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4E5F;&#x4E0D;&#x6DB5;&#x76D6;&#x6240;&#x6709;&#x7684;&#x524D;&#x7AEF;&#x5DE5;&#x7A0B;&#x5316;&#x77E5;&#x8BC6;&#xFF0C;&#x4F46;&#x5BF9;&#x4E8E;&#x5927;&#x578B;&#x7684; Vue &#x5DE5;&#x7A0B;&#x662F;&#x524D;&#x7F6E;&#x6761;&#x4EF6;&#xFF0C;&#x4E5F;&#x662F;&#x5408;&#x683C;&#x7684;&#x300E;&#x524D;&#x7AEF;&#x5DE5;&#x7A0B;&#x5E08;&#x300F;&#x5E94;&#x5F53;&#x5177;&#x5907;&#x7684;&#x77E5;&#x8BC6;&#x3002;</p>
-<h3 id="&#x524D;&#x7AEF;&#x751F;&#x6001;-&#x5DE5;&#x7A0B;&#x5316;"><a href="#&#x524D;&#x7AEF;&#x751F;&#x6001;-&#x5DE5;&#x7A0B;&#x5316;" class="headerlink" title="&#x524D;&#x7AEF;&#x751F;&#x6001;/&#x5DE5;&#x7A0B;&#x5316;"></a>&#x524D;&#x7AEF;&#x751F;&#x6001;/&#x5DE5;&#x7A0B;&#x5316;</h3><p>&#x2716;&#xFE0F;1. &#x4E86;&#x89E3; JavaScript &#x80CC;&#x540E;&#x7684;&#x89C4;&#x8303;&#xFF0C;ECMAScript &#x7684;&#x5386;&#x53F2;&#x548C;&#x76EE;&#x524D;&#x7684;&#x89C4;&#x8303;&#x5236;&#x5B9A;&#x65B9;&#x5F0F;&#x3002;&#x5B66;&#x4E60; ES2015/16 &#x7684;&#x65B0;&#x7279;&#x6027;&#xFF0C;&#x7406;&#x89E3; ES2015 modules&#xFF0C;&#x9002;&#x5F53;&#x5173;&#x6CE8;&#x8FD8;&#x672A;&#x6210;&#x4E3A;&#x6807;&#x51C6;&#x7684;&#x63D0;&#x6848;&#x3002;</p>
+<h3>&#x524D;&#x7AEF;&#x751F;&#x6001;/&#x5DE5;&#x7A0B;&#x5316;</h3>
+<p>&#x2716;&#xFE0F;1. &#x4E86;&#x89E3; JavaScript &#x80CC;&#x540E;&#x7684;&#x89C4;&#x8303;&#xFF0C;ECMAScript &#x7684;&#x5386;&#x53F2;&#x548C;&#x76EE;&#x524D;&#x7684;&#x89C4;&#x8303;&#x5236;&#x5B9A;&#x65B9;&#x5F0F;&#x3002;&#x5B66;&#x4E60; ES2015/16 &#x7684;&#x65B0;&#x7279;&#x6027;&#xFF0C;&#x7406;&#x89E3; ES2015 modules&#xFF0C;&#x9002;&#x5F53;&#x5173;&#x6CE8;&#x8FD8;&#x672A;&#x6210;&#x4E3A;&#x6807;&#x51C6;&#x7684;&#x63D0;&#x6848;&#x3002;</p>
 <p>&#x2716;&#xFE0F;2. &#x5B66;&#x4E60;&#x547D;&#x4EE4;&#x884C;&#x7684;&#x4F7F;&#x7528;&#x3002;&#x5EFA;&#x8BAE;&#x7528; Mac&#x3002;</p>
 <p>&#x2716;&#xFE0F;3. &#x5B66;&#x4E60; Node.js &#x57FA;&#x7840;&#x3002;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; nvm &#x8FD9;&#x6837;&#x7684;&#x5DE5;&#x5177;&#x6765;&#x7BA1;&#x7406;&#x673A;&#x5668;&#x4E0A;&#x7684; Node &#x7248;&#x672C;&#xFF0C;&#x5E76;&#x4E14;&#x5C06; npm &#x7684; registry &#x6CE8;&#x518C;&#x8868;&#x914D;&#x7F6E;&#x4E3A;&#x6DD8;&#x5B9D;&#x7684;&#x955C;&#x50CF;&#x6E90;&#x3002;&#x81F3;&#x5C11;&#x8981;&#x4E86;&#x89E3; npm &#x7684;&#x5E38;&#x7528;&#x547D;&#x4EE4;&#xFF0C;npm scripts &#x5982;&#x4F55;&#x4F7F;&#x7528;&#xFF0C;&#x8BED;&#x4E49;&#x5316;&#x7248;&#x672C;&#x53F7;&#x89C4;&#x5219;&#xFF0C;CommonJS &#x6A21;&#x5757;&#x89C4;&#x8303;&#xFF08;&#x4E86;&#x89E3;&#x5B83;&#x548C; ES2015 Modules &#x7684;&#x5F02;&#x540C;&#xFF09;&#xFF0C;Node &#x5305;&#x7684;&#x89E3;&#x6790;&#x89C4;&#x5219;&#xFF0C;&#x4EE5;&#x53CA; Node &#x7684;&#x5E38;&#x7528; API&#x3002;&#x5E94;&#x5F53;&#x505A;&#x5230;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x5199;&#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x7A0B;&#x5E8F;&#x3002;&#x6CE8;&#x610F;&#x6700;&#x65B0;&#x7248;&#x672C;&#x7684; Node (6+) &#x5DF2;&#x7ECF;&#x652F;&#x6301;&#x7EDD;&#x5927;&#x90E8;&#x5206; ES2015 &#x7684;&#x7279;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x501F;&#x6B64;&#x5DE9;&#x56FA; ES2015&#x3002;</p>
 <p>&#x2716;&#xFE0F;4. &#x4E86;&#x89E3;&#x5982;&#x4F55;&#x4F7F;&#x7528; / &#x914D;&#x7F6E; Babel &#x6765;&#x5C06; ES2015 &#x7F16;&#x8BD1;&#x5230; ES5 &#x7528;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x73AF;&#x5883;&#x3002;</p>
 <p>&#x2716;&#xFE0F;5. &#x5B66;&#x4E60; Webpack&#x3002;Webpack &#x662F;&#x4E00;&#x4E2A;&#x6781;&#x5176;&#x5F3A;&#x5927;&#x540C;&#x65F6;&#x4E5F;&#x590D;&#x6742;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x4F5C;&#x4E3A;&#x8D77;&#x6B65;&#xFF0C;&#x7406;&#x89E3;&#x5B83;&#x7684;&#x300E;&#x4E00;&#x5207;&#x7686;&#x6A21;&#x5757;&#x300F;&#x7684;&#x601D;&#x60F3;&#xFF0C;&#x5E76;&#x57FA;&#x672C;&#x4E86;&#x89E3;&#x5176;&#x5E38;&#x7528;&#x914D;&#x7F6E;&#x9009;&#x9879;&#x548C; loader &#x7684;&#x6982;&#x5FF5;/&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5373;&#x53EF;&#xFF0C;&#x6BD4;&#x5982;&#x5982;&#x4F55;&#x642D;&#x914D; Webpack &#x4F7F;&#x7528; Babel&#x3002;&#x5B66;&#x4E60; Webpack &#x7684;&#x4E00;&#x4E2A;&#x6311;&#x6218;&#x5728;&#x4E8E;&#x5176;&#x672C;&#x8EAB;&#x6587;&#x6863;&#x7684;&#x6DF7;&#x4E71;&#xFF0C;&#x5EFA;&#x8BAE;&#x591A;&#x641C;&#x7D22;&#x641C;&#x7D22;&#xFF0C;&#x5E94;&#x8BE5;&#x8FD8;&#x662F;&#x6709;&#x8D28;&#x91CF;&#x4E0D;&#x9519;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x6559;&#x7A0B;&#x7684;&#x3002;&#x82F1;&#x6587;&#x597D;&#x7684;&#x5EFA;&#x8BAE;&#x9605;&#x8BFB; Webpack 2.0 &#x7684;&#x6587;&#x6863;&#xFF0C;&#x6BD4;&#x8D77; 1.0 &#x6709;&#x6781;&#x5927;&#x7684;&#x6539;&#x5584;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x548C; 1.0 &#x7684;&#x4E0D;&#x517C;&#x5BB9;&#x4E4B;&#x5904;&#x3002;</p>
-<h3 id="Vue-&#x8FDB;&#x9636;"><a href="#Vue-&#x8FDB;&#x9636;" class="headerlink" title="Vue &#x8FDB;&#x9636;"></a>Vue &#x8FDB;&#x9636;</h3><p>&#x2716;&#xFE0F;1. &#x6709;&#x4E86; Node &#x548C; Webpack &#x7684;&#x57FA;&#x7840;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; vue-cli &#x6765;&#x642D;&#x5EFA;&#x57FA;&#x4E8E; Webpack &#xFF0C;&#x5E76;&#x4E14;&#x652F;&#x6301;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x7684;&#x9879;&#x76EE;&#x4E86;&#x3002;&#x5EFA;&#x8BAE;&#x7528; webpack-simple &#x8FD9;&#x4E2A;&#x6A21;&#x677F;&#x5F00;&#x59CB;&#xFF0C;&#x5E76;&#x9605;&#x8BFB;&#x5B98;&#x65B9;&#x6559;&#x7A0B;&#x8FDB;&#x9636;&#x7BC7;&#x5269;&#x4F59;&#x7684;&#x5185;&#x5BB9;&#x4EE5;&#x53CA; vue-loader &#x7684;&#x6587;&#x6863;&#xFF0C;&#x4E86;&#x89E3;&#x4E00;&#x4E9B;&#x8FDB;&#x9636;&#x914D;&#x7F6E;&#x3002;&#x6709;&#x5174;&#x8DA3;&#x7684;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x4EB2;&#x624B;&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x642D;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x52A0;&#x6DF1;&#x7406;&#x89E3;&#x3002;</p>
+<h3>Vue &#x8FDB;&#x9636;</h3>
+<p>&#x2716;&#xFE0F;1. &#x6709;&#x4E86; Node &#x548C; Webpack &#x7684;&#x57FA;&#x7840;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; vue-cli &#x6765;&#x642D;&#x5EFA;&#x57FA;&#x4E8E; Webpack &#xFF0C;&#x5E76;&#x4E14;&#x652F;&#x6301;&#x5355;&#x6587;&#x4EF6;&#x7EC4;&#x4EF6;&#x7684;&#x9879;&#x76EE;&#x4E86;&#x3002;&#x5EFA;&#x8BAE;&#x7528; webpack-simple &#x8FD9;&#x4E2A;&#x6A21;&#x677F;&#x5F00;&#x59CB;&#xFF0C;&#x5E76;&#x9605;&#x8BFB;&#x5B98;&#x65B9;&#x6559;&#x7A0B;&#x8FDB;&#x9636;&#x7BC7;&#x5269;&#x4F59;&#x7684;&#x5185;&#x5BB9;&#x4EE5;&#x53CA; vue-loader &#x7684;&#x6587;&#x6863;&#xFF0C;&#x4E86;&#x89E3;&#x4E00;&#x4E9B;&#x8FDB;&#x9636;&#x914D;&#x7F6E;&#x3002;&#x6709;&#x5174;&#x8DA3;&#x7684;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x4EB2;&#x624B;&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x642D;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x52A0;&#x6DF1;&#x7406;&#x89E3;&#x3002;</p>
 <p>&#x2716;&#xFE0F;2. &#x6839;&#x636E; &#x4F8B;&#x5B50; &#x5C1D;&#x8BD5;&#x5728; Webpack &#x6A21;&#x677F;&#x57FA;&#x7840;&#x4E0A;&#x6574;&#x5408; vue-router &#x548C; vuex</p>
 <p>&#x2716;&#xFE0F;3. &#x6DF1;&#x5165;&#x7406;&#x89E3; Virtual DOM &#x548C;&#x300E;&#x6E32;&#x67D3;&#x51FD;&#x6570; (Render Functions)&#x300F;&#x8FD9;&#x4E00;&#x7AE0;&#x8282;&#xFF08;&#x53EF;&#x9009;&#x62E9;&#x6027;&#x4F7F;&#x7528; JSX)&#xFF0C;&#x7406;&#x89E3;&#x6A21;&#x677F;&#x548C;&#x6E32;&#x67D3;&#x51FD;&#x6570;&#x4E4B;&#x95F4;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#xFF0C;&#x4E86;&#x89E3;&#x5176;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x548C;&#x9002;&#x7528;&#x573A;&#x666F;&#x3002;</p>
 <p>&#x2716;&#xFE0F;4. &#xFF08;&#x53EF;&#x9009;&#xFF09;&#x6839;&#x636E;&#x9700;&#x6C42;&#xFF0C;&#x4E86;&#x89E3;&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;&#x7684;&#x4F7F;&#x7528;&#xFF08;&#x9700;&#x8981;&#x914D;&#x5408; Node &#x670D;&#x52A1;&#x5668;&#x5F00;&#x53D1;&#x7684;&#x77E5;&#x8BC6;&#xFF09;&#x3002;&#x5176;&#x5B9E;&#x66F4;&#x91CD;&#x8981;&#x7684;&#x662F;&#x7406;&#x89E3;&#x5B83;&#x6240;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;&#x5E76;&#x641E;&#x6E05;&#x695A;&#x4F60;&#x662F;&#x5426;&#x9700;&#x8981;&#x5B83;&#x3002;</p>
 <p>&#x2716;&#xFE0F;5. &#x9605;&#x8BFB;&#x5F00;&#x6E90;&#x7684; Vue &#x5E94;&#x7528;&#x3001;&#x7EC4;&#x4EF6;&#x3001;&#x63D2;&#x4EF6;&#x6E90;&#x7801;&#xFF0C;&#x81EA;&#x5DF1;&#x5C1D;&#x8BD5;&#x7F16;&#x5199;&#x5F00;&#x6E90;&#x7684; Vue &#x7EC4;&#x4EF6;&#x3001;&#x63D2;&#x4EF6;&#x3002;</p>
 <p>&#x2716;&#xFE0F;6. &#x53C2;&#x8003; &#x8D21;&#x732E;&#x6307;&#x5357; &#x9605;&#x8BFB; Vue &#x7684;&#x6E90;&#x7801;&#xFF0C;&#x7406;&#x89E3;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#x3002;&#xFF08;&#x9700;&#x8981;&#x4E86;&#x89E3; Flow&#xFF09;</p>
-<p>&#x2716;&#xFE0F;7. &#x53C2;&#x4E0E; Vue GitHub issue &#x7684;&#x5B9A;&#x4F4D; -&gt; &#x8D21;&#x732E; PR -&gt; &#x52A0;&#x5165;&#x6838;&#x5FC3;&#x56E2;&#x961F; -&gt; &#x5347;&#x4EFB; CTO -&gt; &#x8FCE;&#x5A36;&#x767D;&#x5BCC;&#x7F8E;&#x2026;&#xFF08;&#x8BEF;</p>
+<p>&#x2716;&#xFE0F;7. &#x53C2;&#x4E0E; Vue GitHub issue &#x7684;&#x5B9A;&#x4F4D; -&gt; &#x8D21;&#x732E; PR -&gt; &#x52A0;&#x5165;&#x6838;&#x5FC3;&#x56E2;&#x961F; -&gt; &#x5347;&#x4EFB; CTO -&gt; &#x8FCE;&#x5A36;&#x767D;&#x5BCC;&#x7F8E;...&#xFF08;&#x8BEF;</p>
 <hr>
 <p>&#x4EE5;&#x540E;&#x5B8C;&#x6210;&#x4E00;&#x4E2A;&#x540E;&#xFF0C;&#x53D8;&#x4F1A;&#x66F4;&#x65B0;&#x76EE;&#x6807;&#xFF0C;&#x5E76;&#x4E14;&#x5199;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;</p>
 
-      
-    </div>
+    </article>
+    <!-- license  -->
     
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
-          
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://f5cc.cc">FTH</a>
+            <p>原文链接：<a href="https://f5cc.cc/2018/05/02/vue进度/">https://f5cc.cc/2018/05/02/vue进度/</a>
+            <p>发表日期：<a href="https://f5cc.cc/2018/05/02/vue进度/">May 2nd 2018, 10:06:46 am</a>
+            <p>更新日期：<a href="https://f5cc.cc/2018/05/02/vue进度/">May 2nd 2018, 11:18:12 am</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
             
-              <a href="/2018/04/23/对于git的理解与总结/" rel="next" title="对于git的理解与总结">
-                <i class="fa fa-chevron-left"></i> 对于git的理解与总结
-              </a>
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2018/08/04/打造完美自用Ubuntu-18-04-开发环境，解决qq微信网易云/" title= "打造完美自用Ubuntu 18.04 开发环境，解决qq微信网易云">
+                    <div class="nextTitle">打造完美自用Ubuntu 18.04 开发环境，解决qq微信网易云</div>
+                </a>
             
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
+        </li>
+        <li class="previous">
             
-          </div>
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/04/23/对于git的理解与总结/" title= "对于git的理解与总结">
+                    <div class="prevTitle">对于git的理解与总结</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
         </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDYyOS8xMTE2Nw=="></div>
-    </div>
-
-  
-
-
-
-        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    
+        
+            
+                <a href="mailto:641084662@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/fi3ework" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png" />
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">起步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">前端生态/工程化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">Vue 进阶</span></a></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 5
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/04</span><a class="archive-post-title" href= "/2018/08/04/打造完美自用Ubuntu-18-04-开发环境，解决qq微信网易云/" >打造完美自用Ubuntu 18.04 开发环境，解决qq微信网易云</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/02</span><a class="archive-post-title" href= "/2018/05/02/vue进度/" >vue进度</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span><a class="archive-post-title" href= "/2018/04/23/对于git的理解与总结/" >对于git的理解与总结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/02</span><a class="archive-post-title" href= "/2018/04/02/vue2-0-key-虚拟dom更新-Diff算法/" >vue2.0 key 虚拟dom更新 Diff算法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span><a class="archive-post-title" href= "/2018/03/07/新建一个hexo-git/" >新建一个hexo+git</a>
+        </li>
+    
     </div>
   </div>
-
-  <aside id="sidebar" class="sidebar">
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
     
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">FTH</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/FaithGit" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:641084662@qq.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                推荐阅读
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.uisdc.com/" title="优设" target="_blank">优设</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#起步"><span class="nav-number">1.</span> <span class="nav-text">起步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端生态-工程化"><span class="nav-number">2.</span> <span class="nav-text">前端生态/工程化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue-进阶"><span class="nav-number">3.</span> <span class="nav-text">Vue 进阶</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
+        <span class="sidebar-tag-name" data-tags="Vue"><span class="iconfont-archer">&#xe606;</span>Vue</span>
+    
+        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
+    
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
     </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-foursquare"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Powered By - Faith</span>
-
-  
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
 </div>
-
-
-  <div class="powered-by">个人博客</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">站点 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
+        <span class="sidebar-category-name" data-categories="Vue"><span class="iconfont-archer">&#xe60a;</span>Vue</span>
     
-
+        <span class="sidebar-category-name" data-categories="git"><span class="iconfont-archer">&#xe60a;</span>git</span>
     
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+        <span class="sidebar-category-name" data-categories="hexo"><span class="iconfont-archer">&#xe60a;</span>hexo</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "FTH"
+    }
 </script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
     <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("49PVedBTaBd30D6jQYcOG8Dh-gzGzoHsz", "OnkKmzKBlUnH8MBxHWQexafB");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
         }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-</body>
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
 </html>
+
+

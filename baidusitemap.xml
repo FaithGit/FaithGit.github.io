@@ -1,87 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-
-    
   <url>
+    <loc>https://f5cc.cc/2018/08/04/%E6%89%93%E9%80%A0%E5%AE%8C%E7%BE%8E%E8%87%AA%E7%94%A8Ubuntu-18-04-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%EF%BC%8C%E8%A7%A3%E5%86%B3qq%E5%BE%AE%E4%BF%A1%E7%BD%91%E6%98%93%E4%BA%91/</loc>
+    <lastmod>2018-10-06T00:37:49.262Z</lastmod>
+  </url>  <url>
     <loc>https://f5cc.cc/2018/05/02/vue%E8%BF%9B%E5%BA%A6/</loc>
-    <lastmod>2018-05-02T03:17:27.105Z</lastmod>
-    <data>
-        <display>
-        <title>vue进度</title>
-        <pubTime>2018-05-02T02:06:46.000Z</pubTime>
-        
-        <tag>Vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="Vue" url="https://f5cc.cc/categories/Vue/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-05-02T03:18:12.345Z</lastmod>
+  </url>  <url>
     <loc>https://f5cc.cc/2018/04/23/%E5%AF%B9%E4%BA%8Egit%E7%9A%84%E7%90%86%E8%A7%A3%E4%B8%8E%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2018-04-23T12:13:15.908Z</lastmod>
-    <data>
-        <display>
-        <title>对于git的理解与总结</title>
-        <pubTime>2018-04-23T10:30:00.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="https://f5cc.cc/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://f5cc.cc/2018/04/02/vue2-0-key-%E8%99%9A%E6%8B%9Fdom%E6%9B%B4%E6%96%B0-Diff%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2018-04-23T11:07:36.639Z</lastmod>
-    <data>
-        <display>
-        <title>vue2.0 key 虚拟dom更新 Diff算法</title>
-        <pubTime>2018-04-02T01:10:07.000Z</pubTime>
-        
-        <tag>Vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="Vue" url="https://f5cc.cc/categories/Vue/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://f5cc.cc/2018/03/07/%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AAhexo-git/</loc>
     <lastmod>2018-03-22T11:11:06.880Z</lastmod>
-    <data>
-        <display>
-        <title>新建一个hexo+git</title>
-        <pubTime>2018-03-07T04:51:43.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="https://f5cc.cc/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
+  </url>
 </urlset>

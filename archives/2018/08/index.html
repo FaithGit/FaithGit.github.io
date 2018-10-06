@@ -78,6 +78,8 @@
     <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -201,10 +203,8 @@
 </head>
 
     
-        <body class="home-body">
     
-    
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -220,34 +220,21 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            fi3ework's Studio.
-            <!-- 文章页  -->
-            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
-            
-            
-                it's better to burn out than to fade away
-            
-            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
@@ -378,223 +365,10 @@ height:50vh;
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/05/02/vue进度/" >
-            
-                <span>vue进度</span>
-        </a>
-        <div class="abstract-content">
-            &#x8D77;&#x6B65;
-&#x2714;&#xFE0F;1. &#x624E;&#x5B9E;&#x7684; JavaScript / HTML / CSS &#x57FA;&#x672C;&#x529F;&#x3002;&#x8FD9;&#x662F;&#x524D;&#x7F6E;&#x6761;&#x4EF6;&#x3002;
-&#x2714;&#xFE0F;2. &#x901A;&#x8BFB;&#x5B98;&#x65B9;&#x6559;&#x7A0B; (guide) &#x7684;&#x57FA;&#x7840;&#x7BC7;&#x3002;&#x4E0D...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Vue">Vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/23/对于git的理解与总结/" >
-            
-                <span>对于git的理解与总结</span>
-        </a>
-        <div class="abstract-content">
-            &#x5DF2;&#x7ECF;&#x81EA;&#x5B66;&#x4E86;&#x4E00;&#x5E74;&#x591A;&#x5173;&#x4E8E;&#x524D;&#x7AEF;&#x8FD9;&#x5757;&#xFF0C;&#x53D1;&#x73B0;&#x89E6;&#x53CA;&#x7684;&#x65B9;&#x65B9;&#x9762;&#x9762;&#x5B9E;&#x5728;&#x662F;&#x592A;&#x591A;&#xFF0C;&#x6709;&#x592A;&#x591A;&#x9700;&#x8981;&#x5B66;&#x4E60;&...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "git">git</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/02/vue2-0-key-虚拟dom更新-Diff算法/" >
-            
-                <span>vue2.0 key 虚拟dom更新 Diff算法</span>
-        </a>
-        <div class="abstract-content">
-            &#x5176;&#x5B9E;&#x4E0D;&#x53EA;&#x662F;vue&#xFF0C;react&#x4E2D;&#x5728;&#x6267;&#x884C;&#x5217;&#x8868;&#x6E32;&#x67D3;&#x65F6;&#x4E5F;&#x4F1A;&#x8981;&#x6C42;&#x7ED9;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x6DFB;&#x52A0;&#x4E0A;key&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x3002;
-&#x8981;&#x89E3;&#x91CA;key&#...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Vue">Vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/03/07/新建一个hexo-git/" >
-            
-                <span>新建一个hexo+git</span>
-        </a>
-        <div class="abstract-content">
-            &#x6B22;&#x8FCE;&#x6765;&#x5230;&#x6211;&#x7684;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;
-&#x8FD9;&#x662F;&#x6211;&#x7B2C;&#x4E00;&#x6B21;&#x4F7F;&#x7528;hexo+git&#x7684;&#x65B9;&#x5F0F;&#x53BB;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E2A;&#x4EBA;&#x7684;&#x535A;&#x5BA2;&#xFF0C;&#x4E4B;&#x524D;&#x4ECE;&#x672A;...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "hexo">hexo</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
 </main>
             <!-- profile -->
-            
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/Misaka.jpg >
-    <div class="profile-name">Faith</div>
-    
-    <div class="profile-signature">
-        JavaScript
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
-            
-                <a href="mailto:641084662@qq.com" class="iconfont-archer email" title=email ></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/fi3ework" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                  
-                  <img class="profile-qr" src="/assets/example_qr.png" />
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href= //www.google.com target="_black">friendA</a>
-                    </span>
-                
-            
-                
-            
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
-        </div>
-    
-</div>
             
         </div>
         <footer class="footer footer-unloaded">
