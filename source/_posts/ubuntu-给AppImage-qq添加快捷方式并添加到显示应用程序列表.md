@@ -20,6 +20,7 @@ Icon=/home/fu/图片qq.png
 Type=Application
 StartupNotify=true
 ```
+>注意复制的时候,存在换行符的,记得删除,如若不行,可重新敲打代码
 
 `Name		快捷方式的名称`
 `Exec			就是AppImage qq所在的文件路径`
