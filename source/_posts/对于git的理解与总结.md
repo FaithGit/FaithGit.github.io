@@ -39,7 +39,7 @@ $ git commit -m "对自己的描述"
 $ git log --all --oneline --graph  //图像化显示一行历史
 ```
 这个无非就是自己了解下后缀有什么效果
-![Alt text](http://p7mx7a48u.bkt.clouddn.com/git.png)
+![Alt text](http://image.fujs.top/git.png)
 
 > 我们从上向下解读一下框框起来的含义
  > - **粉色框** :指针指向master
