@@ -4,7 +4,7 @@ date: 2018-10-04 21:50:19
 tags: Ubuntu
 categories: Ubuntu
 type: "Ubuntu"
-header_image: http://image.fujs.top/ubuntu18.04-2-index.png
+header_image: 
 ---
 ![界面图](http://image.fujs.top/ubuntu18.04-2-index.png)
 还是老规矩,先来一波新垣结衣(左下角就是我们要达到的效果)
