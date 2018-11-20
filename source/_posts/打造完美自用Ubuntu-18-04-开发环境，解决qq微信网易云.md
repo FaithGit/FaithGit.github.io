@@ -6,7 +6,7 @@ categories: Ubuntu
 type: "Ubuntu"
 header_image:
 ---
-![我老婆不能挡住](http://p7mx7a48u.bkt.clouddn.com/ubuntu18.04-01)
+![我老婆不能挡住](http://image.fujs.top/ubuntu18.04-1-index.png)
 
 # 先上最终图，下面是具体步骤
 唠叨几句：壁纸是新恒结衣，为canon代言，自己修改的字体用的也是canon字体；dock没动，纯粹仿造不如去买mac，省时省力；自用电脑是vn7一代的，坑爹的键盘加上没有指示灯，所以特意找到了大小写指示器，步骤下都会讲到；本来是记录在docx上，想想还是得经常用markdown来总结，用平台来分享自己的过程，方便自己今后寻着轨道快速到站。
@@ -23,7 +23,7 @@ header_image:
 ## 进入系统设置
 
 - **更新源咯，在软件和更新中，选择好最优服务器，顺便附加驱动里安装好N卡驱动，这个不再此篇幅介绍，**
-![略略略](http://p7mx7a48u.bkt.clouddn.com/ubuntu18.04-02png)
+![更新软件源](http://image.fujs.top/ubuntu18.04-1-soft.png)
 - 然后一套combo: &ensp;`sudo apt-get update` 
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;`sudo apt-get upgrade`
 
@@ -34,7 +34,7 @@ header_image:
 - 怎样打开64位 Ubuntu 的32位支持功能：https://blog.csdn.net/zjclugger/article/details/51395828 
 - 双击或者拖到终端都打不开，那是缺库：`sudo apt install libgl1-mesa-glx:i386 libfreetype6:i386 `
 - 就算打开，现在还是很丑的，没关系等我们安装完软件再美化 
-![这里写图片描述](http://p7mx7a48u.bkt.clouddn.com/ubuntu18.04-03.png)
+![后台](http://image.fujs.top/ubuntu18.04-1-houtai.png)
 [内容更新:2018年10月4日]
 给qq添加快捷方式,详情请看下面的文章
 https://blog.csdn.net/AKillWum/article/details/82940772
@@ -48,11 +48,11 @@ https://blog.csdn.net/AKillWum/article/details/82940772
 ## 输入法
 [内容更新:2018年10月4日]
 搜索搜狗输入法下载linux版本,之后等待安装,然后回到所有应用程序找到输入法
-![在这里插入图片描述](http://p7mx7a48u.bkt.clouddn.com/ubuntu18.04-04.png)
+![fix](http://image.fujs.top/ubuntu18.04-1-fix01.png)
 使用fix输入法
-![在这里插入图片描述](http://p7mx7a48u.bkt.clouddn.com/ubuntu18.04-05.png)
+![fix](http://image.fujs.top/ubuntu18.04-1-fix02.png)
 我们每次按shift都会切换, 我只想要按ctrl+shift 才进入搜过输入法的话就禁用两侧shift
-![在这里插入图片描述](http://p7mx7a48u.bkt.clouddn.com/ubuntu18.04-06.png)
+![fix](http://image.fujs.top/ubuntu18.04-1-fix03.png)
 但是fix 有个配置不保存的问题,所以就需要一行代码搞定
 >`sudo chown root:root ~/.config/fcitx/config`
 ## 解决后台
@@ -64,9 +64,9 @@ https://blog.csdn.net/AKillWum/article/details/82940772
 >`sudo apt install gnome-shell-extensions`
 
 此时你就多了个应用
-![这里写图片描述](http://p7mx7a48u.bkt.clouddn.com/ubuntu18.04-07.png)
+![优化工具](http://image.fujs.top/ubuntu18.04-1-youhua.png)
 如果你这两步都完成了，打开将会看到
-![这里写图片描述](http://p7mx7a48u.bkt.clouddn.com/ubuntu18.04-08.png)
+![extensions有的包](http://image.fujs.top/ubuntu18.04-1-app.png)
 3.我已经都安装好了，所以你如果是第一次安装的话，把上图3个打开
 4.现在我们去逛逛装插件的市场
 >https://extensions.gnome.org/
@@ -80,7 +80,7 @@ https://blog.csdn.net/AKillWum/article/details/82940772
 6.本地主机连接器
 >`sudo apt install chrome-gnome-shell`
 
-![本地主机连接器](http://p7mx7a48u.bkt.clouddn.com/ubuntu18.04-09png)
+![本地主机连接器](http://image.fujs.top/ubuntu18.04-09png)
 这样只要打开开关就能安装插件了
 本人自用：
 - **[TopIcons](https://extensions.gnome.org/extension/495/topicons/) (显示后台)**
@@ -90,7 +90,7 @@ https://blog.csdn.net/AKillWum/article/details/82940772
 
 ##自用样式
 本篇幅不介绍如何美化，详情转载[点我点我](https://blog.csdn.net/zyqblog/article/details/80152016)
-![这里写图片描述](http://p7mx7a48u.bkt.clouddn.com/ubuntu18.04-10.png)
+![我的样式](http://image.fujs.top/ubuntu18.04-1-style.png)
 
 ~~## 截图~~
 
@@ -104,7 +104,7 @@ https://blog.csdn.net/AKillWum/article/details/82940772
 由于deepin-scrot 截图双屏只能截图一个,而且截图起来,一直有蓝边的情况,所以只能另找其他出路,爬文了一会便找到了替代方法,用自带的截图gnome-screenshot,截图好剪切板直接可以用,想要保存到本地那就有很多方法了不说明了.
 - 打开系统设置->键盘
 - 点击最下面的+号
-![在这里插入图片描述](http://p7mx7a48u.bkt.clouddn.com/ubuntu18.04-011.png)
+![命令为gnome-screenshot -ac](http://image.fujs.top/ubuntu18.04-1-screenshot.png)
 设置完毕,值得一提的是每次使用还会有快门声~
 ## 磁盘只读
 这就是Ubuntu与win10共存出现的问题，虽然没有好好去研究各种分区，或者还有其他复杂的操作，但是出现这个问题是因为

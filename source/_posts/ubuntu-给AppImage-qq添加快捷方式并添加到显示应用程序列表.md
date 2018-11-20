@@ -4,9 +4,9 @@ date: 2018-10-04 21:50:19
 tags: Ubuntu
 categories: Ubuntu
 type: "Ubuntu"
-header_image: http://p7mx7a48u.bkt.clouddn.com/ubuntu18.04%282%29-01.png
+header_image: http://image.fujs.top/ubuntu18.04-2-index.png
 ---
-![在这里插入图片描述](http://p7mx7a48u.bkt.clouddn.com/ubuntu18.04%282%29-01.png)
+![界面图](http://image.fujs.top/ubuntu18.04-2-index.png)
 还是老规矩,先来一波新垣结衣(左下角就是我们要达到的效果)
 ## 5步走
 ### 在任意位置新建一个文件 重命名为xx.desktop
@@ -28,7 +28,7 @@ StartupNotify=true
 
 ### 保存文件后 右键属性,在权限目录下 **允许作为程序执行文件上**打钩
 这个时候 文件就会变成
-![在这里插入图片描述](http://p7mx7a48u.bkt.clouddn.com/ubuntu18.04%282%29-02.png)
+![qq图标](http://image.fujs.top/ubuntu18.04-2-qq.png)
 ### `sudo nautilus` 启动个无敌权限的文件夹 把刚刚的文件放到这个目录下
  /usr/share/applications
 ## icon下载

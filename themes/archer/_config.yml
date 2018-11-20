@@ -1,6 +1,6 @@
 # ========== Profile ========== #
 # avatar
-avatar: http://p7mx7a48u.bkt.clouddn.com/saber.jpeg
+avatar: http://image.fujs.top/saber.jpeg
 # author name
 author: Faith
 # signature
@@ -49,11 +49,11 @@ main_title: Faith's Blog.
 # subtitle
 subtitle: 好的域名我们已经买不到了
 # site haeder image
-site_header_image: http://p7mx7a48u.bkt.clouddn.com/index-bg.jpg
+site_header_image: http://image.fujs.top/index-bg.jpg
 # post haeder image
-post_header_image: http://p7mx7a48u.bkt.clouddn.com/post-bg.jpg
+post_header_image: http://image.fujs.top/post-bg.jpg
 # 404 image
-_404_image: http://p7mx7a48u.bkt.clouddn.com/404.jpg
+_404_image: http://image.fujs.top/404.jpg
 
 # ========== Search ========== #
 algolia_search:

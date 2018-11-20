@@ -21,7 +21,7 @@ vue和react的虚拟DOM的Diff算法大致相同，其核心是基于两个简�
 
 这里我们借用React’s diff algorithm中的一张图来简单说明一下：
 
-![Alt text](http://p7mx7a48u.bkt.clouddn.com/diff-1.png)
+![Alt text](http://image.fujs.top/diff-1.png)
 
 
 当页面的数据发生变化时，Diff算法只会比较同一层级的节点：
@@ -34,18 +34,18 @@ vue和react的虚拟DOM的Diff算法大致相同，其核心是基于两个简�
 
 比如一下这个情况：
 
-![Alt text](http://p7mx7a48u.bkt.clouddn.com/diff-2.png)
+![Alt text](http://image.fujs.top/diff-2.png)
  
 
 我们希望可以在B和C之间加一个F，Diff算法默认执行起来是这样的：
 
-![Alt text](http://p7mx7a48u.bkt.clouddn.com/diff-3.png)
+![Alt text](http://image.fujs.top/diff-3.png)
 
 即把C更新成F，D更新成C，E更新成D，最后再插入E，是不是很没有效率？
 
 所以我们需要使用key来给每个节点做一个唯一标识，Diff算法就可以正确的识别此节点，找到正确的位置区插入新的节点。
 
-![Alt text](http://p7mx7a48u.bkt.clouddn.com/diff-4.png)
+![Alt text](http://image.fujs.top/diff-4.png)
 
 所以一句话，key的作用主要是为了高效的更新虚拟DOM。另外vue中在使用相同标签名元素的过渡切换时，也会使用到key属性，其目的也是为了让vue可以区分它们，
 

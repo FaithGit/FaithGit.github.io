@@ -116,7 +116,7 @@ jsonContent:
     categories: true
     tags: true
 
-
+#页面内的搜索
 algolia:
   applicationID: 'ZW3FB8ZKAZ'
   apiKey: 'eb9fdf367017bf380624e7c0429b8a69'
