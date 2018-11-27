@@ -39,7 +39,7 @@ $ git commit -m "对自己的描述"
 $ git log --all --oneline --graph  //图像化显示一行历史
 ```
 这个无非就是自己了解下后缀有什么效果
-![Alt text](http://image.fujs.top/git.png)
+![ps](http://image.fujs.top/git.png)
 
 > 我们从上向下解读一下框框起来的含义
  > - **粉色框** :指针指向master
@@ -84,3 +84,31 @@ $ git clone 地址
 ``` 
 $ git pull //获取远程更新
 ```
+# SSH keys
+[内容更新:2018年11月27日]
+Github 转输认证，需要在本机声明key
+在git bash 控制台输入
+``` 
+//这将按照你提供的邮箱地址，创建一对密钥
+01.  $ ssh-keygen -t rsa -C "youremail@example.com" 
+
+
+//接下来
+Generating public/private rsa key pair.
+
+//直接回车，则将密钥按默认文件进行存储。此时也可以输入特定的文件名，比如/c/Users/you/.ssh/github_rsa
+02.  Enter file in which to save the key (/c/Users/you/.ssh/id_rsa): [Press enter]
+
+//忽略密码直接回车
+03.  Enter passphrase (empty for no passphrase): [Type a passphrase]
+04.  Enter same passphrase again: [Type passphrase again]
+//查看你的公钥
+05.  cat ~/.ssh/id_rsa.pub
+```
+6.  向github添加你的公钥
+![add pub keys](http://image.fujs.top/git-pubkeys.png)
+
+之后右上角有个 New SSH Keys 单击进去
+7.  把之前查看到的公钥复制到key，title自己设置
+![add pub keys2](http://image.fujs.top/git-add.png)
+8.  跳转确认密码页面，填写你的密码，就完成了
