@@ -112,3 +112,42 @@ Generating public/private rsa key pair.
 7.  把之前查看到的公钥复制到key，title自己设置
 ![add pub keys2](http://image.fujs.top/git-add.png)
 8.  跳转确认密码页面，填写你的密码，就完成了
+
+# 添加多个SSH Keys
+做事留一线，日后好相见，不管是备份还是做coding的国内分流，我们始终需要把ssh keys加入到托管平台
+如果还是按照第七步去操作，但是你需要自己定一个名字
+```
+ 1.  Enter file in which to save the key (/c/Users/you/.ssh/id_rsa): [Press enter]
+ 这里就不能直接敲回车了 可以填写/c/Users/用户名/.ssh/你想要的名字,忽略密码设置
+
+ 2.  添加私钥
+终端输入一下命令：
+
+$ ssh-add ~/.ssh/id_rsa              //如果出现Could not open a connection to your authentication agent
+$ ssh-add ~/.ssh/你设置的名字         //错误提示先执行$ ssh-agent.exe bash，然后执行上面命令；
+```
+> 下面是ssh-add的其他用法
+> D：删除ssh-agent中的所有密钥.
+> -d：从ssh-agent中的删除密钥
+> -e pkcs11：删除PKCS#11共享库pkcs1提供的钥匙。
+> -s pkcs11：添加PKCS#11共享库pkcs1提供的钥匙。
+> -L：显示ssh-agent中的公钥
+> -l：显示ssh-agent中的密钥
+> -t life：对加载的密钥设置超时时间，超时ssh-agent将自动卸载密钥
+> -X：对ssh-agent进行解锁
+> -x：对ssh-agent进行加锁
+
+3.   配置.ssh/config
+自己vi config一个文件出来
+```
+Host github.com
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa
+ 
+Host git.coding.net
+HostName git.coding.net
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/你设置的名字
+```
+然后:wq 保存退出后测试一下多个git平台，列如coding $ssh -T git@git.coding.net
