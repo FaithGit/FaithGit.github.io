@@ -10,7 +10,7 @@ social:
   email: 641084662@qq.com
   github: https://github.com/FaithGit
   # wechat and qq should be a path of qr-code image
-  wechat: /assets/example_qr.png
+  wechat: http://image.fujs.top/wechat.png
   qq: 
   telegram: 
   weibo: 
@@ -30,7 +30,7 @@ social:
   rss: 
 # friends
 friends:
-  friendA: //www.google.com
+  🌈小尾巴: //www.ixiaowei8.com
   friendB: 
   friendC: 
 about:
