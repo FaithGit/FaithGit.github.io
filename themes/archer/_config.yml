@@ -51,7 +51,8 @@ subtitle: 好的域名我们已经买不到了
 # site haeder image
 site_header_image: http://image.fujs.top/index-bg.jpg
 # post haeder image
-post_header_image: https://api.ixiaowai.cn/gqapi/gqapi.php
+# post_header_image: https://unsplash.it/1600/900?random
+post_header_image: https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture
 # 404 image
 _404_image: http://image.fujs.top/404.jpg
 
