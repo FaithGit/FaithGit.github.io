@@ -7,7 +7,7 @@ type: "Ubuntu"
 header_image: 
 ---
 ![界面图](http://image.fujs.top/ubuntu18.04-2-index.png)
-还是老规矩,先来一波新垣结衣(左下角就是我们要达到的效果)
+还是老规矩,先来一波新垣结衣(右下角就是我们要达到的效果)
 ## 5步走
 ### 在任意位置新建一个文件 重命名为xx.desktop
 ### `gedit xx.desktop`
